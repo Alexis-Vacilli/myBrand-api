@@ -8,7 +8,7 @@
     "start:dev": "nodemon --exec babel-node server.js",
     "lint": "eslint",
     "lint-fix": "eslint . --fix",
-    "test": "NODE_ENV=test mocha  --timeout 100000 ./test/**.test.js --require @babel/register --exit",
+    "test": "NODE_ENV=test mocha  --timeout 100000 ./src/tests/. --require @babel/register --exit",
     "cover": "nyc --reporter=html --reporter=text npm test"
   },
   "repository": {
@@ -39,6 +39,8 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "mocha": "^8.2.1",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2"
   }
 }

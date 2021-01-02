@@ -2,3 +2,5 @@
 node_modules/
 # Adding .env
 .env
+# Coverage directory
+Coverage
