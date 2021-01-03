@@ -8,8 +8,7 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
-  env:
-    - PORT: ${secrets.PORT}
+  
 
 jobs:
   build:
@@ -19,7 +18,8 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
-
+    env:
+    - PORT: ${secrets.PORT}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
