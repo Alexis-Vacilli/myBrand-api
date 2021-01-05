@@ -26,7 +26,6 @@ const login =  (req, res) => {
         });
     })
     .catch(err => {
-        console.log(err+"From line 40");
         res.status(500).json({
             error: err
         })
