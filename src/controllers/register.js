@@ -1,6 +1,6 @@
 import User from '../models/users';
 import bcrypt from 'bcrypt';
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const userSignUp =  (req, res) => {
     User.find({email: req.body.email })
@@ -14,7 +14,7 @@ const userSignUp =  (req, res) => {
             bcrypt.hash(req.body.password, 10, (err, hash) => {   
                 if(err) {
                     return res.status(500).json({
-                        error: err
+                        message: 'Server Error', error: err
                     });
                 } else {
                     const user = new User({
@@ -31,9 +31,8 @@ const userSignUp =  (req, res) => {
                         });  
                     })
                     .catch(err => {
-                        console.log(err);
                         res.status(500).json({
-                            error: err
+                            message: 'Server Error', error: err
                         });
                     });
                 }
