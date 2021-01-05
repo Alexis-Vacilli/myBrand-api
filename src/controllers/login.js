@@ -2,7 +2,7 @@ import User from '../models/users';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-exports.loggingUser =  (req, res) => {
+const login =  (req, res) => {
     User.findOne( {email: req.body.email} )
     .exec()
     .then(user => {
@@ -32,3 +32,5 @@ exports.loggingUser =  (req, res) => {
         })
     })
 }
+
+export default login;
