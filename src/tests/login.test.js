@@ -16,7 +16,7 @@ describe('Login a user', async () => {
     it('Login a user', async () => {
         const res = await chai.request(server).post('/api/v1/login').send(mockUser);
         res.should.have.status(200);
-        res.should.have.property('message', 'Auth successful')
+        res.body.should.have.property('message').eql('Auth successful')
     });
     it('should not login', async () => {
         const mockuser = {
@@ -30,5 +30,6 @@ describe('Login a user', async () => {
     it('server error', async () => {
         const res = await chai.request(server).post('/api/v1/login').send()
         res.should.have.status(500)
+        res.body.should.have.property('message').eql('Auth successful')
     })
 });
