@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
 require("dotenv/config");
+import mongoose from 'mongoose';
 const connectoToMongo = () => {
     const URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.r7fxs.mongodb.net/portfolio?retryWrites=true&w=majority`;
     mongoose.connect(URL, {

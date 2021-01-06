@@ -8,7 +8,7 @@
     "start:dev": "nodemon --exec babel-node server.js",
     "lint": "eslint",
     "lint-fix": "eslint . --fix",
-    "test": "NODE_ENV=test mocha  --timeout 100000 ./src/tests/. --require @babel/register --exit",
+    "test": "NODE_ENV=test mocha  --timeout 1000000 ./src/tests/. --require @babel/register --exit",
     "cover": "nyc --reporter=html --reporter=text npm test"
   },
   "repository": {
