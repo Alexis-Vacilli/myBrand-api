@@ -11,7 +11,7 @@ const login =  (req, res) => {
                 const token=jwt.sign({
                     email:user.email,
                     userId:user._id
-                },process.env.jwt_key,
+                },process.env.JWT_KEY,
                 {
                     expiresIn:'1h'
                 })
