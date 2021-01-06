@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 require("dotenv/config");
 const connectoToMongo = () => {
-    mongoose.connect(process.env.db_URL, {
+    const URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.r7fxs.mongodb.net/portfolio?retryWrites=true&w=majority`;
+    mongoose.connect(URL, {
         useUnifiedTopology: true,
         useNewUrlParser: true
     }).then(() => {

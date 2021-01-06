@@ -27,7 +27,7 @@ const login =  (req, res) => {
     })
     .catch(err => {
         res.status(500).json({
-            error: err
+            message: 'Server error', error: err
         })
     })
 }

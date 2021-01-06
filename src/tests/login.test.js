@@ -30,6 +30,6 @@ describe('Login a user', async () => {
     it('server error', async () => {
         const res = await chai.request(server).post('/api/v1/login').send()
         res.should.have.status(500)
-        res.body.should.have.property('message').eql('Auth successful')
+        res.body.should.have.property('message').eql('Server error')
     })
 });
