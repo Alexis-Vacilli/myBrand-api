@@ -6,6 +6,8 @@ const articleSchema = mongoose.Schema({
     description: {type: String, required: true},
     imageUrl: {type: String, required: false }
 
-})         
+})        
 
-export default mongoose.model('Articles', articleSchema);
+const Article = mongoose.model('articles', articleSchema);
+
+export default Article;
