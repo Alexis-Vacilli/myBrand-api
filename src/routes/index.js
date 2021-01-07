@@ -1,8 +1,8 @@
-import createRoutes from './api/articles';
+import readRoutes from './api/articles';
 import {Router} from 'express';
-//import documentationRouter from '../documentaion/index';
+import documentationRouter from '../documentation/index';
 
 const router = Router();
-router.use("/articles", createRoutes);
-//router.use('/docs', documentationRouter);
+router.use("/articles", readRoutes);
+router.use('/docs', documentationRouter);
 export default router;
