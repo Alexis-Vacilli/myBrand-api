@@ -8,8 +8,7 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: false
     }
-    // articleImage: {type: String, required: false }
 
-})    ;     
+})   
 
 export default mongoose.model('Articles', articleSchema);
