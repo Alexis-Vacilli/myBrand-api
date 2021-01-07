@@ -3,8 +3,6 @@ import Article from '../models/articles'
 const readArticle = (req, res) => {
     const id = req.params.articleId;
     Article.findById(id)
-    .select('title description _id imageUrl')
-    .exec()
     .then(doc => {
         console.log('From database', doc);
         if(doc) {
@@ -20,6 +18,12 @@ const readArticle = (req, res) => {
                 message: 'No valid entry found for provided ID'
             })
         }
+    })
+    .catch(err => {
+        res.status(500).json({
+            message: 'Server error',
+            error: err
+        })
     })
     // const {
     //     id

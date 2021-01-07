@@ -6,6 +6,6 @@ import readArticle from '../../controllers/read-article-details';
 const router = express.Router();
 config();
 
-router.post('/:id',readArticle);
+router.get('/:articleId',readArticle);
 
 export default router;
