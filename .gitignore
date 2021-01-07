@@ -2,3 +2,6 @@
 .nyc_output/
 coverage/
 node_modules/
+.DS_Store
+src/.DS_Store
+src/tests/.DS_Store
