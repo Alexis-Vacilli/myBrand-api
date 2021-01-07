@@ -19,7 +19,10 @@ const readArticles = (req, res) => {
                     }
                 })
             }
-            res.status(200).json(response);
+            res.status(200).json({
+                message: 'Fetched all articles',
+                response
+            });
         })
         .catch(err => {
             res.status(500).json({

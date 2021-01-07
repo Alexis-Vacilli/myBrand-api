@@ -12,26 +12,16 @@ export default router;
 /**
  * @swagger
  * /articles:
- *   GET:
+ *   get:
  *     tags:
  *       - Articles
  *     name: Read 
- *     summary: Read all article
+ *     summary: Read all articles
  *     consumes:
  *       - application/json
- *     requestBody:
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                title:
- *                 type: string
- *                description:
- *                 type: string
  *     responses:
  *       200:
- *             description:  Read all articles.
+ *             description:  Fetched all articles successfully.
  *       500:
  *             description: Server error.
  * */

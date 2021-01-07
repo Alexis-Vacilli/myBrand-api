@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('Read all articles', async () => {
     it('Should read all articles', (done) => {
             chai.request(server)
-                .get('/')
+                .get('/api/v1/articles')
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.message).to.be.a('string');
