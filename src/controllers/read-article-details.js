@@ -9,18 +9,16 @@ const readArticle = (req, res) => {
             _id: id
         }).then((response) => {
             console.log(response);
-            res.status(200).json(response);
+            res.status(200).json({
+                message: 'Successfully fetched an article',
+                response
+            });
         }).catch((err) => {
             res.status(500).json({
-                error: err
+                message: err.message, 
             });
-            console.log(err);
         });
-    } else {
-        res.status(404).json({
-            message: 'there is no blog with this id',
-        });
-    }
+    } 
 };
 
 

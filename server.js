@@ -1,6 +1,9 @@
 import {} from 'dotenv/config';
 import express from 'express';
-import routes from './src/routes/index'
+import routes from './src/routes/index';
+import connect from './src/config/mongoose';
+
+connect();
 
 const app = express();
 
