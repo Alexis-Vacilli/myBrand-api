@@ -2,8 +2,6 @@ import Article from '../models/article';
 
 const readArticles = (req, res) => {
     Article.find()
-        .select('title description _id articleImage')
-        .exec()
         .then(docs => {
             console.log(docs);
             const response = {
@@ -12,7 +10,7 @@ const readArticles = (req, res) => {
                     return {
                         title: doc.title,
                         description: doc.description,
-                        //articleImage: doc.articleImage,
+                        imageUrl: doc.imageUrl,
                         _id: doc._id,
                         request: {
                             type: "GET",
