@@ -1,7 +1,6 @@
 import server from '../../server';
 import chai, {should, expect} from 'chai';
 import chaiHttp from 'chai-http';
-import mocha from 'mocha';
 
 chai.should();
 chai.use(chaiHttp);
@@ -17,8 +16,5 @@ describe('Read all articles', async () => {
                     res.body.should.be.a('object');
                     done();
                 });
-    })
-    it('Server error', (done) => {
-        res.status
     })
 })
