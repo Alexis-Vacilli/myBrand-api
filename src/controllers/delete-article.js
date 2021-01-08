@@ -9,7 +9,6 @@ const deleteArticle = (req, res) => {
         }).then(() => {
             res.status(200).json({
                 message: 'Article deleted',
-
             });
         })
 
