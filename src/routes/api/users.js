@@ -1,22 +1,20 @@
-import {config} from 'dotenv'; 
+import {config} from 'dotenv';
 import express from 'express';
-import register from '../../controllers/register';
-import validator from "../../middleware/validatePassword";
-
-const router = express.Router();
+import login from '../../controllers/login';
+import connect from '../../config/mongoose';
+connect();
 config();
-
-router.post('/', validator,register);
-
+const router = express.Router();
+router.post('/' ,login);
 export default router;
 
 /**
  * @swagger
- * /signup:
+ * /login:
  *   post:
  *     tags:
  *       - Users
- *     name: Signup
+ *     name: Login
  *     summary: Creates a new user
  *     consumes:
  *       - application/json
@@ -31,10 +29,10 @@ export default router;
  *                password:
  *                 type: string
  *     responses:
- *       201:
- *             description: user created successfully.
- *       409:
- *             description: The email is already in the system.
+ *       200:
+ *             description: Auth successful.
+ *       401:
+ *             description: Invalid credentials.
  *       500:
- *             description: Bad request.
+ *             description: Server error.
  * */
