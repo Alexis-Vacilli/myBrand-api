@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 
 const mockUser = {
-    email:'alexisvacilli100@gmail.com',
+    email:'alexisvacilli10@gmail.com',
     password: 'alexisvacilli'
 }
 
@@ -30,7 +30,7 @@ describe('sign a user', async () => {
 
     it('should not create a user who already exists', async () => {
         const mockUser = {
-            email:'alexisvacilli100@gmail.com',
+            email:'alexisvacilli10@gmail.com',
             password: 'alexisvacilli'
         }
         const res = await chai.request(server).post('/api/v1/signup').send(mockUser)

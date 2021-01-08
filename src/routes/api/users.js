@@ -1,11 +1,12 @@
 import {config} from 'dotenv';
 import express from 'express';
+import register from '../../controllers/register';
 import login from '../../controllers/login';
-import connect from '../../config/mongoose';
-connect();
+import validator from "../../middleware/validatePassword";
 config();
 const router = express.Router();
-router.post('/' ,login);
+router.post('/signup', validator,register);
+router.post('/login' ,login);
 export default router;
 
 /**
