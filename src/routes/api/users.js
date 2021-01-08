@@ -2,13 +2,10 @@ import {config} from 'dotenv';
 import express from 'express';
 import login from '../../controllers/login';
 import connect from '../../config/mongoose';
-
 connect();
 config();
 const router = express.Router();
-
 router.post('/' ,login);
-
 export default router;
 
 /**
