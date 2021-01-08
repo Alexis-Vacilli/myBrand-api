@@ -8,8 +8,8 @@ chai.should();
 chai.use(chaiHttp);
 
 const mockUser = {
-    email:"vacillialexis@outlook.com",
-    password:"alexis"
+    email:"alexisvacilli100@gmail.com",
+    password:"alexisvacilli"
 };
 
 describe('Login a user', async () => {
@@ -20,7 +20,7 @@ describe('Login a user', async () => {
     });
     it('should not login', async () => {
         const mockuser = {
-            email:'vacillialexis@outlook.com',
+            email:'alexisvacilli100@gmail.com',
             password: 'alexi'
         }
         const res = await chai.request(server).post('/api/v1/login').send(mockuser)
