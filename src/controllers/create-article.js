@@ -1,4 +1,4 @@
-import Article from '../models/articles';
+import Article from '../models/create-article';
 import uploader from '../config/cloudinary'
 import mongoose from 'mongoose';
 
