@@ -21,7 +21,7 @@ export default router;
  *     consumes:
  *       - application/json
  *     requestBody:
- *       content:
+ *       content:4
  *         application/json:
  *           schema:
  *             type: object

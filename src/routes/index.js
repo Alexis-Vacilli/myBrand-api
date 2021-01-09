@@ -1,4 +1,5 @@
 import createRoutes from './api/articles';
+import userRoutes from './api/users';
 import {Router} from 'express';
 import documentationRouter from '../documentaion/index';
 
