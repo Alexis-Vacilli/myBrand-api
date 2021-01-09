@@ -1,10 +1,12 @@
 import {} from 'dotenv/config';
 import express from 'express';
+import fileUpload from 'express-fileupload'
 import routes from './src/routes/index';
 import connect from './src/config/mongoose';
 connect();
 const app = express();
 app.use(express.json());
+app.use(fileUpload({useTempFiles: true}));
 app.use('/api/v1', routes)
 app.get('/', (req, res) => res.status(200).send({
     status: 200,
