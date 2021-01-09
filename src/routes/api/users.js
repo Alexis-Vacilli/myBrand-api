@@ -11,6 +11,34 @@ export default router;
 
 /**
  * @swagger
+ * /signup:
+ *   post:
+ *     tags:
+ *       - Users
+ *     name: Signup
+ *     summary: Creates a new user
+ *     consumes:
+ *       - application/json
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                email:
+ *                 type: string
+ *                password:
+ *                 type: string
+ *     responses:
+ *       201:
+ *             description: user created successfully.
+ *       409:
+ *             description: The email is already in the system.
+ *       500:
+ *             description: Bad request.
+ * */
+/**
+ * @swagger
  * /login:
  *   post:
  *     tags:
