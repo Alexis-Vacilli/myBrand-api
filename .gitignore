@@ -4,6 +4,4 @@ coverage/
 node_modules/
 .DS_Store
 src/.DS_Store
-src/models/create-article.js
-src/routes/api/create-article.js
 src/tests/.DS_Store
