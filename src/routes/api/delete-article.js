@@ -1,24 +1,21 @@
 import {config} from 'dotenv';
 import express from 'express';
-import login from '../../controllers/login';
-import connect from '../../config/mongoose';
+import deleteArticle from '../../controllers/delete-article';
 
-connect();
 config();
 const router = express.Router();
-
-router.post('/' ,login);
-
+router.delete('/:id', deleteArticle);
 export default router;
 
 /**
+/**
  * @swagger
- * /login:
- *   post:
+ * /articles:
+ *   delete:
  *     tags:
- *       - Users
- *     name: Login
- *     summary: Creates a new user
+ *       - Articles
+ *     name: Delete 
+ *     summary: Delete an article
  *     consumes:
  *       - application/json
  *     requestBody:
@@ -27,15 +24,13 @@ export default router;
  *           schema:
  *             type: object
  *             properties:
- *                email:
+ *                title:
  *                 type: string
- *                password:
+ *                description:
  *                 type: string
  *     responses:
  *       200:
- *             description: Auth successful.
- *       401:
- *             description: Invalid credentials.
+ *             description:  Article deleted.
  *       500:
  *             description: Server error.
  * */

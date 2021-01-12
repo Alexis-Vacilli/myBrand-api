@@ -30,3 +30,10 @@ jobs:
       env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           PORT: ${{secrets.PORT}}
+          JWT_KEY: ${{secrets.JWT_KEY}}
+          DB_USER: ${{secrets.DB_USER}}
+          DB_PASSWORD: ${{secrets.DB_PASSWORD}}
+          CLOUDINARY_NAME: ${{secrets.CLOUDINARY_NAME}}
+          CLOUDINARY_API_KEY: ${{secrets.CLOUDINARY_API_KEY}}
+          CLOUDINARY_API_SECRET: ${{secrets.CLOUDINARY_API_SECRET}}
+

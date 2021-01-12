@@ -1,22 +1,22 @@
 import {config} from 'dotenv'; 
 import express from 'express';
-import create from '../../controllers/create-article';
+import updateArticle from '../../controllers/update-article';
 
-config();
 const router = express.Router();
+config();
 
-router.post('/', create);
+router.patch('/:id', updateArticle);
 
 export default router;
 
 /**
  * @swagger
  * /articles:
- *   post:
+ *   patch:
  *     tags:
  *       - Articles
- *     name: Create 
- *     summary: Creates an article
+ *     name: Update 
+ *     summary: Updates an article
  *     consumes:
  *       - application/json
  *     requestBody:
@@ -31,9 +31,7 @@ export default router;
  *                 type: string
  *     responses:
  *       201:
- *             description:  Created article successfully.
- *       402:
- *             description: Auth failed.
+ *             description:  Updates an article.
  *       500:
  *             description: Server error.
  * */
