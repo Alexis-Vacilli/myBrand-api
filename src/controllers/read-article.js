@@ -3,7 +3,6 @@ import Article from '../models/articles';
 const readArticles = (req, res) => {
     Article.find()
         .then(docs => {
-            console.log(docs);
             const response = {
                 count: docs.length,
                 articles: docs.map(doc => {
