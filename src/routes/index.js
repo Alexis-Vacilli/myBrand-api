@@ -6,7 +6,6 @@ import updateRoutes from './api/update-article';
 import deleteArticle from './api/delete-article';
 import {Router} from 'express';
 import documentationRouter from '../documentaion/index';
-
 const router = Router();
 router.use('/docs', documentationRouter);
 router.use("/signup", signupRoute);

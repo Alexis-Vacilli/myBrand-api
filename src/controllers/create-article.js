@@ -1,38 +1,39 @@
 import Article from '../models/articles';
+import uploader from '../config/cloudinary'
 import mongoose from 'mongoose';
 
 
-const createArticles = (req, res) => {
-    const article = new Article({
-        _id: new mongoose.Types.ObjectId(),
-        title: req.body.title,   
-        description: req.body.description,
-        //articleImage: req.file.path
-    });
-    article
-    .save()
-    .then(result => {
-        console.log(result);
-        res.status(201).json({
+const createArticles = async (req, res) => {
+    let article;
+    try {
+        if (req.files) {
+            const tmp = req.files.image.tempFilePath;
+            const res1 = await uploader.upload(tmp, (_, res1) => res1);
+            article = new Article({
+                _id: new mongoose.Types.ObjectId(),
+                title: req.body.title,
+                description: req.body.description,
+                imageUrl: String(res1.url)
+            });
+        } else {
+            article = new Article({
+                _id: new mongoose.Types.ObjectId(),
+                title: req.body.title,
+                description: req.body.description,
+            });
+        }
+        const post = await article.save();
+        return res.status(201).json({
             message: 'Created article successfully',
-            createdArticle: {
-                title: result.title,
-                description: result.description,
-                _id: result._id,
-                request: {
-                    type: 'POST',
-                    url: "http://localhost:3000/articles/" + result._id
-                }
-            },
-        });
-    
-    })
-    .catch(err => {
-        res.status(500).json({
-            message: 'Server error', error: err
+            article: post
         })
-    })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Server error',
+
+        });
+    }
 }
 
-export default createArticles;
 
+export default createArticles;
